@@ -23,10 +23,11 @@ renv/staging/
 
 # ------------------------------------------------------------
 # Herramientas de asistentes de IA (configuración local)
+# Las skills se restauran con `npx skills experimental_install`
+# a partir de skills-lock.json (que sí se versiona)
 # ------------------------------------------------------------
 .claude/
 .agents/
-skills-lock.json
 
 # ------------------------------------------------------------
 # Office / sistema operativo / editores

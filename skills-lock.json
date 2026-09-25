@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "Clustering Analysis": {
+      "source": "aj-geddes/useful-ai-prompts",
+      "sourceType": "github",
+      "skillPath": "skills/clustering-analysis/SKILL.md",
+      "computedHash": "a1d07f207f24087da08a7eb1d5d324e8d6d9c9a338f06a3c87f2b37ff1ca56af"
+    },
+    "docx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/docx/SKILL.md",
+      "computedHash": "3b8f8cf1ca7a427607c78312655e95e21b5f8f2b06a1aad4dc5554cc90eb095c"
+    },
+    "mermaid-skill": {
+      "source": "Agents365-ai/mermaid-skill",
+      "sourceType": "github",
+      "skillPath": "skills/mermaid-skill/SKILL.md",
+      "computedHash": "7c8609788d331dc78d23f2f767b15db67c8d576370236513c6784aeb2d5be303"
+    },
+    "mongodb-query-optimizer": {
+      "source": "mongodb/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/mongodb-query-optimizer/SKILL.md",
+      "computedHash": "dad6bb8b3b21d75b59b18e326d780b55ad849a9c3110ad44ee23d1856130a79a"
+    },
+    "shiny-bslib": {
+      "source": "posit-dev/skills",
+      "sourceType": "github",
+      "skillPath": "shiny/shiny-bslib/SKILL.md",
+      "computedHash": "73493840a160b15539d9abd368ad640eb5404f880bbb4235cad0217151ea81a1"
+    }
+  }
+}

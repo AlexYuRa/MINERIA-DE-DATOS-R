@@ -20,6 +20,7 @@ El proyecto cubre todo el recorrido desde el padrón administrativo publicado en
 ├── INFORME_FINAL.md                            # Informe técnico completo (Fases II y III)
 ├── INFORME_ACADEMICO_FINAL.md                  # Informe académico (redacción de tesis)
 ├── PRODUCT.md                                  # Contexto de usuarios y diseño de la app
+├── skills-lock.json                            # Skills de IA usadas (ver sección "Skills de IA utilizadas")
 └── fase3/
     ├── 01_etl_seed.R                 # ETL: extracción → 6 transformaciones → carga en MongoDB
     ├── 02_conexion_evidencias.R      # a) Conexión R–MongoDB
@@ -74,6 +75,38 @@ Rscript fase3/lanzar_app.R               # f) App Shiny → http://127.0.0.1:812
 El orden importa: 05 y 06 leen los resultados que dejan 03 y 04. El clustering usa `set.seed(2026)`, así que los resultados son reproducibles.
 
 Para devolver la base de datos a su estado canónico (por ejemplo, después de probar el CRUD de la app), basta con volver a ejecutar `01_etl_seed.R` y `04_patrones_clustering.R`.
+
+## Skills de IA utilizadas
+
+Durante el desarrollo se usaron *skills* (paquetes de instrucciones para agentes de IA como Claude Code) para apoyar el diseño, la auditoría y la documentación. **No son necesarias para ejecutar el proyecto**; se listan para transparencia y para quien quiera reproducir el flujo de trabajo.
+
+| Skill | Repositorio | Uso en el proyecto |
+|---|---|---|
+| `mongodb-query-optimizer` | [mongodb/agent-skills](https://github.com/mongodb/agent-skills) | Auditoría de índices y consultas (`explain`, orden de `$match`/`$lookup`) |
+| `Clustering Analysis` | [aj-geddes/useful-ai-prompts](https://github.com/aj-geddes/useful-ai-prompts) | Revisión del clustering k-means y de su plan de validación |
+| `shiny-bslib` | [posit-dev/skills](https://github.com/posit-dev/skills) | Revisión de la app Shiny |
+| `mermaid-skill` | [Agents365-ai/mermaid-skill](https://github.com/Agents365-ai/mermaid-skill) | Diagramas (ER, flujo ETL, arquitectura) de los informes |
+| `docx` | [anthropics/skills](https://github.com/anthropics/skills) | Generación de `CLUSTERING.docx` y `SHINY.docx` |
+| `impeccable` | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Auditoría y rediseño visual de la app Shiny (usa `PRODUCT.md`) |
+
+Se instalan con la CLI [`skills`](https://www.npmjs.com/package/skills) (requiere Node.js). Las cinco primeras están fijadas en [skills-lock.json](skills-lock.json) y se restauran desde la raíz del repositorio con:
+
+```bash
+npx skills experimental_install
+```
+
+O una por una:
+
+```bash
+npx skills add mongodb/agent-skills --skill mongodb-query-optimizer
+npx skills add aj-geddes/useful-ai-prompts --skill "Clustering Analysis"
+npx skills add posit-dev/skills --skill shiny-bslib
+npx skills add Agents365-ai/mermaid-skill --skill mermaid-skill
+npx skills add anthropics/skills --skill docx
+npx skills add pbakaus/impeccable --skill impeccable -g   # se instaló a nivel de usuario
+```
+
+Para ver qué skills ofrece un repositorio sin instalar nada: `npx skills add <repo> --list`.
 
 ## Documentación
 
