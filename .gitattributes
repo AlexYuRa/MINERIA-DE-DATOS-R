@@ -1,0 +1,13 @@
+# Normaliza finales de línea en archivos de texto
+* text=auto
+
+*.R    text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+
+# Binarios: sin conversión ni diff de texto
+*.xlsx binary
+*.docx binary
+*.png  binary
+*.rds  binary
+*.bson binary

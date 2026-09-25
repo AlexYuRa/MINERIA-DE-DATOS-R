@@ -1,0 +1,45 @@
+# ------------------------------------------------------------
+# Datos generados: se reproducen ejecutando los scripts de fase3/
+# (solo se versiona el dataset original .xlsx de la raíz)
+# ------------------------------------------------------------
+fase3/salidas/*
+# Excepción: los gráficos G1–G6 se versionan porque el informe los incrusta
+!fase3/salidas/graficos/
+fase3/salidas/graficos/*
+!fase3/salidas/graficos/*.png
+
+# ------------------------------------------------------------
+# R / RStudio
+# ------------------------------------------------------------
+.Rhistory
+.RData
+.Rapp.history
+.Ruserdata
+.Rproj.user/
+*.Rproj
+rsconnect/
+renv/library/
+renv/staging/
+
+# ------------------------------------------------------------
+# Herramientas de asistentes de IA (configuración local)
+# ------------------------------------------------------------
+.claude/
+.agents/
+skills-lock.json
+
+# ------------------------------------------------------------
+# Office / sistema operativo / editores
+# ------------------------------------------------------------
+~$*
+*.tmp
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Python (restos de herramientas)
+__pycache__/
+*.pyc
+node_modules/
